@@ -1,37 +1,58 @@
-## Welcome to GitHub Pages
+## LIST OF PUBLIC API
 
-You can use the [editor on GitHub](https://github.com/sudharsanvishnu/list-of-api/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Go to https://sudharsanvishnu.github.io/list-of-api/API.Json 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### FETCH API
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
+This API provided the list of public API example 
+      {
+         "API": "AdoptAPet",
+         "Description": "Resource to help get pets adopted",
+         "Auth": "apiKey",
+         "HTTPS": true,
+         "Cors": "yes",
+         "Link": "https://www.adoptapet.com/public/apis/pet_list.html",
+         "Category": "Animals"
+      },
+      
 ```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+const API_KEY = "https://sudharsanvishnu.github.io/list-of-api/API.Json"
 
-- Bulleted
-- List
+const App = () => {
 
-1. Numbered
-2. List
+  const [data, setData ] = useState([]);
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+  useEffect(() => {
+          const controller = new AbortController();
+          const  signal  = controller.signal;      
+          (async () => {
+            const response = await fetch(API_KEY, {signal});
+              const data = await response.json();
+                setData(data.entries); // fetched JSON
+            }
+          )();
+          
+          return () => controller.abort();
+   },[API_KEY])
+  
+    return(
+    <View>
+      <Text>{data.API}</Text>
+      <Text>{data.Description}</Text>
+      <Text>{data.Auth}</Text>
+      <Text>{data.HTTPS}</Text>
+      <Text>{data.Cors}</Text>
+      <Text>{data.Link}</Text>
+      <Text>{data.Category}</Text>
+    </View>
+    )
+}
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+For more details see [React Native Docs](https://reactnative.dev/docs/network)
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sudharsanvishnu/list-of-api/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+sudharsanvishnu@gmail.com
