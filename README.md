@@ -42,13 +42,25 @@ const App = () => {
   
     return(
     <View>
-      <Text>{data.API}</Text>
-      <Text>{data.Description}</Text>
-      <Text>{data.Auth}</Text>
-      <Text>{data.HTTPS}</Text>
-      <Text>{data.Cors}</Text>
-      <Text>{data.Link}</Text>
-      <Text>{data.Category}</Text>
+       <FlatList
+                keyExtractor={(item, index) => index.toString()}
+                showsHorizontalScrollIndicator={false}
+                refreshing={true}
+                maxToRenderPerBatch={10}
+                initialNumToRender={7}
+                data={news}
+                renderItem={({ item }) => (
+                        <View>
+                              <Text>{item.API}</Text>
+                              <Text>{item.Description}</Text>
+                              <Text>{item.Auth}</Text>
+                              <Text>{item.HTTPS}</Text>
+                              <Text>{item.Cors}</Text>
+                              <Text>{item.Link}</Text>
+                              <Text>{item.Category}</Text>
+                        </View>
+               )}
+              /> 
     </View>
     )
 }
