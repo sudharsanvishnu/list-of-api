@@ -5,6 +5,7 @@ Go to https://sudharsanvishnu.github.io/list-of-api/API.Json
 ### FETCH API
 
 This API provided the list of public API example 
+```
       {
          "API": "AdoptAPet",
          "Description": "Resource to help get pets adopted",
@@ -15,6 +16,9 @@ This API provided the list of public API example
          "Category": "Animals"
       },
       
+```
+
+Example Fetch API using React native
 ```markdown
 
 const API_KEY = "https://sudharsanvishnu.github.io/list-of-api/API.Json"
