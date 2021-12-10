@@ -5,6 +5,7 @@ Go to https://sudharsanvishnu.github.io/list-of-api/API.Json
 ### FETCH API
 
 This API provided the list of public API example 
+```
       {
          "API": "AdoptAPet",
          "Description": "Resource to help get pets adopted",
@@ -15,6 +16,9 @@ This API provided the list of public API example
          "Category": "Animals"
       },
       
+```
+
+Example Fetch API using React native
 ```markdown
 
 const API_KEY = "https://sudharsanvishnu.github.io/list-of-api/API.Json"
@@ -38,13 +42,25 @@ const App = () => {
   
     return(
     <View>
-      <Text>{data.API}</Text>
-      <Text>{data.Description}</Text>
-      <Text>{data.Auth}</Text>
-      <Text>{data.HTTPS}</Text>
-      <Text>{data.Cors}</Text>
-      <Text>{data.Link}</Text>
-      <Text>{data.Category}</Text>
+       <FlatList
+                keyExtractor={(item, index) => index.toString()}
+                showsHorizontalScrollIndicator={false}
+                refreshing={true}
+                maxToRenderPerBatch={10}
+                initialNumToRender={7}
+                data={news}
+                renderItem={({ item }) => (
+                        <View>
+                              <Text>{item.API}</Text>
+                              <Text>{item.Description}</Text>
+                              <Text>{item.Auth}</Text>
+                              <Text>{item.HTTPS}</Text>
+                              <Text>{item.Cors}</Text>
+                              <Text>{item.Link}</Text>
+                              <Text>{item.Category}</Text>
+                        </View>
+               )}
+              /> 
     </View>
     )
 }
