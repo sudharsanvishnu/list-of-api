@@ -1,6 +1,6 @@
 ## LIST OF PUBLIC API
 
-Go to https://sudharsanvishnu.github.io/list-of-api/API.Json 
+[View JSON]( https://sudharsanvishnu.github.io/list-of-api/API.Json) 
 
 ### FETCH API
 
