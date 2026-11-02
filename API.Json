@@ -1,5 +1,5 @@
 {
-   "count": 1405,
+   "count": 1406,
    "entries": [
       {
          "API": "AdoptAPet",
@@ -8792,6 +8792,15 @@
          "HTTPS": true,
          "Cors": "no",
          "Link": "https://biriyani.anoram.com/",
+         "Category": "Personality"
+      },
+      {
+         "API": "Bucketlist Dream of the Day",
+         "Description": "Daily experience with image and source URL; Dutch and Netherlands scope by default",
+         "Auth": "",
+         "HTTPS": true,
+         "Cors": "yes",
+         "Link": "https://bucketlist.nl/brand/droom-van-de-dag.openapi.json",
          "Category": "Personality"
       },
       {
